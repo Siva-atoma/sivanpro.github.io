@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SIRAKS</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      color: #333;
+    }
+
+    body {
+      background-image: url('erf.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 3.5em;
+      color: #ccc;
+      background-color: #0c0c0c66;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      color: #ccc;
+      background-color: #090505e1;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    input, button {
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      width: 250px;
+    }
+
+    button {
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>PRESERVANCE TRIUMPHS</h1>
+  <h2>Kindly enter your details to log into my page</h2>
+
+  <form action="https://formspree.io/f/mqapjjyr" method="POST" id="contact-form" target="hidden_iframe" onsubmit="submitted=true;">
+    <input type="text" name="user_name" placeholder="Your Name" required />
+    <input type="text" name="organization" placeholder="Organization" required />
+    <input type="text" name="position" placeholder="Position" required />
+    <input type="email" name="user_email" placeholder="Email (optional)" />
+    <button type="submit">Submit</button>
+  </form>
+
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+  <script>
+    let submitted = false;
+
+    // Redirect only after form is successfully submitted
+    document.getElementById('hidden_iframe').addEventListener('load', function () {
+      if (submitted) {
+        window.location.href = "lifeproject.html";
+      }
+    });
+  </script>
+
+</body>
+</html>
